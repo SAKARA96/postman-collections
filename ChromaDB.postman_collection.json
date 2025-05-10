@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "ebc3a084-cc8c-42e0-82c7-d32160f108f4",
+		"name": "ChromaDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44627733",
+		"_collection_link": "https://sarveshkarandikar-80989.postman.co/workspace/Sarvesh-Karandikar's-Workspace~decc60b4-4db3-4a87-81e1-9f5e77c44e35/collection/44627733-ebc3a084-cc8c-42e0-82c7-d32160f108f4?action=share&source=collection_link&creator=44627733"
+	},
+	"item": [
+		{
+			"name": "upload",
+			"item": [
+				{
+					"name": "Upload-Multiple",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/L:/root/chromadb/test/docs/sample - Copy.docx",
+										"/L:/root/chromadb/test/docs/sample - Copy.pdf",
+										"/L:/root/chromadb/test/docs/sample - Copy.txt",
+										"/L:/root/chromadb/test/docs/sample.docx",
+										"/L:/root/chromadb/test/docs/sample.pdf",
+										"/L:/root/chromadb/test/docs/sample.txt"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9000/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload-Single",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/L:/root/chromadb/test/docs/sample.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9000/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "search-query",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\":\"The dominant sequence transduction models are based on complex recurrent orconvolutional neural networks that include an encoder and a decoder. The bestperforming models also connect the encoder and decoder through an attentionmechanism. We propose a new simple network architecture, the Transformer,based solely on attention mechanisms, dispensing with recurrence and convolutionsentirely. Experiments on two machine translation tasks show these models tobe superior in quality while being more parallelizable and requiring significantlyless time to train. Our model achieves 28.4 BLEU on the WMT 2014 Englishto-German translation task, improving over the existing best results, includingensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,our model establishes a new single-model state-of-the-art BLEU score of 41.0 aftertraining for 3.5 days on eight GPUs, a small fraction of the training costs of thebest models from the literature.\",\r\n    \"top_k_collections\": 5,\r\n    \"top_k_documents\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
